@@ -16,7 +16,8 @@ body {
 }
 
 .location,
-.temperature {
+.temperature,
+.windspeed {
   height: 30vh;
   width: 50vw;
   display: flex;
@@ -28,7 +29,8 @@ body {
   flex-direction: column;
 }
 
-.degree-section {
+.degree-section,
+.wind-section {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -40,5 +42,14 @@ body {
 }
 
 .degree-section h2 {
+  font-size: 40px;
+}
+
+.wind-section span {
+  margin: 10px;
+  font-size: 30px;
+}
+
+.wind-section h2 {
   font-size: 40px;
 }

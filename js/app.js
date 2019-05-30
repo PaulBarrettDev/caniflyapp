@@ -6,6 +6,8 @@ window.addEventListener("load", () => {
   const locationTimezone = document.querySelector(".location-timezone");
   const temperatureSection = document.querySelector(".temperature");
   const temperatureSpan = document.querySelector(".temperature span");
+  const windspeedSection = document.querySelector(".windspeed");
+  // const windspeedSpan = document.querySelector(".windspeed span");
   // Get location information from users browser
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -24,11 +26,12 @@ window.addEventListener("load", () => {
           return response.json();
         })
         .then(data => {
-          const { temperature, summary, icon } = data.currently;
+          const { temperature, summary, icon, windSpeed } = data.currently;
           // set DOM elements from API
           temperatureDegree.textContent = temperature;
           temperatureDescription.textContent = summary;
           locationTimezone.textContent = data.timezone;
+          windspeedSection.textContent = windSpeed;
           // Convert Farenheight to Celcius
           const celsius = (temperature - 32) * (5 / 9);
           // Set Icon
