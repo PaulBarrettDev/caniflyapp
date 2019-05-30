@@ -1,11 +1,11 @@
 window.addEventListener("load", () => {
   let long;
   let lat;
-  let temperatureDescription = document.querySelector(".temperature-description");
-  let temperatureDegree = document.querySelector(".temperature-degree");
-  let locationTimezone = document.querySelector(".location-timezone");
-  let temperatureSection = document.querySelector(".temperature");
-  let temperatureSpan = document.querySelector(".temperature span");
+  const temperatureDescription = document.querySelector(".temperature-description");
+  const temperatureDegree = document.querySelector(".temperature-degree");
+  const locationTimezone = document.querySelector(".location-timezone");
+  const temperatureSection = document.querySelector(".temperature");
+  const temperatureSpan = document.querySelector(".temperature span");
   // Get location information from users browser
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -30,7 +30,7 @@ window.addEventListener("load", () => {
           temperatureDescription.textContent = summary;
           locationTimezone.textContent = data.timezone;
           // Convert Farenheight to Celcius
-          let celsius = (temperature - 32) * (5 / 9);
+          const celsius = (temperature - 32) * (5 / 9);
           // Set Icon
           setIcons(icon, document.querySelector(".icon"));
 
