@@ -28,10 +28,10 @@ window.addEventListener("load", () => {
         .then(data => {
           const { temperature, summary, icon, windSpeed } = data.currently;
           // set DOM elements from API
-          temperatureDegree.textContent = temperature;
-          temperatureDescription.textContent = summary;
+          temperatureDegree.textContent = `Current temperature is ${temperature}`;
+          temperatureDescription.textContent = `Today is ${summary}`;
           locationTimezone.textContent = data.timezone;
-          windspeedSection.textContent = windSpeed;
+          windspeedSection.textContent = `Todays wind speed is ${windSpeed} mph`;
           // Convert Farenheight to Celcius
           const celsius = (temperature - 32) * (5 / 9);
           // Set Icon

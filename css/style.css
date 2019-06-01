@@ -29,6 +29,10 @@ body {
   flex-direction: column;
 }
 
+.temperature-description {
+  font-size: 30px;
+}
+
 .degree-section,
 .wind-section {
   display: flex;
