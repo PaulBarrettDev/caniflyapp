@@ -7,7 +7,6 @@ window.addEventListener("load", () => {
   const temperatureSection = document.querySelector(".temperature");
   const temperatureSpan = document.querySelector(".temperature span");
   const windspeedSection = document.querySelector(".windspeed");
-  // const windspeedSpan = document.querySelector(".windspeed span");
   // Get location information from users browser
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -28,7 +27,7 @@ window.addEventListener("load", () => {
         .then(data => {
           const { temperature, summary, icon, windSpeed } = data.currently;
           // set DOM elements from API
-          temperatureDegree.textContent = `Current temperature is ${temperature}`;
+          temperatureDegree.textContent = `Current temperature is ${Math.floor((temperature - 32) * (5 / 9))}`;
           temperatureDescription.textContent = `Today is ${summary}`;
           locationTimezone.textContent = data.timezone;
           windspeedSection.textContent = `Todays wind speed is ${windSpeed} mph`;
