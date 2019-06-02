@@ -37,7 +37,7 @@ body {
 .wind-section {
   display: flex;
   align-items: center;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .degree-section span {
